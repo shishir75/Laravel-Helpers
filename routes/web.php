@@ -104,11 +104,17 @@ Route::get('urls', function (){
 
     $url = url()->previous();
 
-
     echo $url;
-
-
-
 
 });
 
+
+// Miscellaneous
+Route::get('mis', function (){
+
+    //echo $container = app();
+
+    echo $collection = collect(['taylor', 'abigail']);
+
+
+});
