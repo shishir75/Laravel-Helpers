@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Auth::routes();
+
+Route::get('/home-page', 'HomeController@index')->name('home');
+
 
 // path helpers
 Route::get('path', function (){
@@ -84,9 +88,14 @@ Route::get('strings', function (){
 
     return (string) Str::uuid(); // 0cfbd19e-b2df-40ea-9726-2f753370b404 randomly
 
+});
 
+Route::get('urls', function (){
+
+    echo $url = action('HomeController@index'); // http://localhost:8000/home-page
 
 
 
 
 });
+
