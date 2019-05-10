@@ -11,6 +11,7 @@
 |
 */
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Str;
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,7 +19,7 @@ Route::get('/', function () {
 
 
 // path helpers
-Route::get('helpers', function (){
+Route::get('path', function (){
 
     $path = app_path(); // E:\xampp\htdocs\laravel_helpers\app
 
@@ -51,5 +52,41 @@ Route::get('helpers', function (){
     $path = storage_path('app/file.txt'); // E:\xampp\htdocs\laravel_helpers\storage\app/file.txt
 
     echo $path;
+
+});
+
+
+// Strings
+Route::get('strings', function (){
+
+    //echo __('Welcome to our application'). "<br>";
+
+    //echo __('messages.welcome');
+
+    $class = class_basename('Foo\Bar\Baz'); // Baz
+    //echo $class;
+
+    //echo e("<html>foo</html>"); // // &lt;html&gt;foo&lt;/html&gt;
+
+    $string = 'The event will take place between :start and :end';
+
+    //echo $replaced = preg_replace_array('/:[a-z_]+/', ['8:30', '9:00'], $string);
+
+    // The event will take place between 8:30 and 9:00
+
+    //echo $converted = Str::camel('foo_bar mmt');
+
+    // fooBarMmt
+
+    //return (string) Str::orderedUuid();
+
+    //echo $random = Str::random(40); // 7XYqbFbEZPvcrzS2sZWkrgBnajSMCfCgeOsTDJhm randomly
+
+    return (string) Str::uuid(); // 0cfbd19e-b2df-40ea-9726-2f753370b404 randomly
+
+
+
+
+
 
 });
