@@ -92,7 +92,20 @@ Route::get('strings', function (){
 
 Route::get('urls', function (){
 
-    echo $url = action('HomeController@index'); // http://localhost:8000/home-page
+    $url = action('HomeController@index'); // http://localhost:8000/home-page
+
+    $url = asset('img/photo.jpg'); // http://localhost:8000/img/photo.jpg
+
+    $url = secure_asset('img/photo.jpg'); // https://localhost:8000/img/photo.jpg
+
+    $url = url()->current();
+
+    $url = url()->full();
+
+    $url = url()->previous();
+
+
+    echo $url;
 
 
 
